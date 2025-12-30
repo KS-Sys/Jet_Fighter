@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Jet_Fighter.Logic/Jet_Fighter.Logic.csproj" />
+  <Project Path="Jet_Fighter/Jet_Fighter.Android/Jet_Fighter.Android.csproj" />
+  <Project Path="Jet_Fighter/Jet_Fighter.Core/Jet_Fighter.Core.csproj" />
+  <Project Path="Jet_Fighter/Jet_Fighter.DesktopGL/Jet_Fighter.DesktopGL.csproj" />
+  <Project Path="Jet_Fighter/Jet_Fighter.iOS/Jet_Fighter.iOS.csproj" />
+  <Project Path="Jet_Fighter/Jet_Fighter.WindowsDX/Jet_Fighter.WindowsDX.csproj" />
+</Solution>
