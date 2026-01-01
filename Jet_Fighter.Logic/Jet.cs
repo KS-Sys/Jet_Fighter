@@ -33,7 +33,7 @@ namespace Jet_Fighter.Logic
 
         public void afterburner_avail()
         {
-            throw new NotImplementedException();
+            afterburnerAvailable = true; // Set the afterburner as available by default as it is not implemented yet. i will change the logic later.
         }
 
         /// <summary>
@@ -55,6 +55,7 @@ namespace Jet_Fighter.Logic
             else
             {
                 this.speed += 50; // Increase speed when landing gear is retracted
+                this.acceleration += 10; // restore acceleration when landing gear is retracted
             }
         }
 
@@ -71,6 +72,10 @@ namespace Jet_Fighter.Logic
             if (afterburnerEngaged && afterburnerAvailable)
             {
                 this.acceleration += 20; // Increase acceleration when afterburner is engaged
+            }
+            else if (!afterburnerEngaged)
+            {
+                this.acceleration -= 20; // Decrease acceleration when afterburner is disengaged
             }
         }
     }

@@ -8,4 +8,7 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Jet_Fighter.Logic\Jet_Fighter.Logic.csproj" />
+  </ItemGroup>
 </Project>

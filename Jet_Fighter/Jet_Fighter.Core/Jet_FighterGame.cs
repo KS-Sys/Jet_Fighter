@@ -5,7 +5,7 @@ using Jet_Fighter.Core.Localization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using static System.Net.Mime.MediaTypeNames;
+using Jet_Fighter.Logic;
 
 namespace Jet_Fighter.Core
 {
@@ -69,11 +69,32 @@ namespace Jet_Fighter.Core
         }
 
         /// <summary>
+        /// textures for the jet fighter's visual effects, i want to load these into the main enviroment.
+        /// </summary>
+        private Texture2D jet_down;
+        private Texture2D jet_up;
+        private Texture2D jet_speed;
+
+        /// <summary>
+        /// vector position for the jet fighter in the game world.
+        /// </summary>
+        private Vector2 jetPosition;
+
+        /// <summary>
         /// Loads game content, such as textures and particle systems.
         /// </summary>
         protected override void LoadContent()
         {
             base.LoadContent();
+
+            SpriteBatch spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            jet_down = Content.Load<Texture2D>("jet_gear");
+            jet_up = Content.Load<Texture2D>("jet_fly");
+            jet_speed = Content.Load<Texture2D>("jet_speed");
+
+            jetPosition = new Vector2(0,400);
+
         }
 
         /// <summary>
@@ -108,6 +129,12 @@ namespace Jet_Fighter.Core
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+            
+            SpriteBatch spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch.Begin();
+            spriteBatch.Draw(jet_down, jetPosition, Color.White);
+            spriteBatch.End();
+
         }
     }
 }
